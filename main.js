@@ -2,7 +2,7 @@
     setInterval(function a(){
     var number = Math.floor(Math.random()*100)
     var number1 = Math.floor(Math.random()*100)
-    var number2 = Math.floor(Math.random()*100)
+    var number2 = generateRandomNumber();
         
 
     document.getElementById('nhietdoValue').innerHTML = number + "℃"
@@ -31,6 +31,23 @@
     totalChart.update();
     
 },2000)
+function generateRandomNumber() {
+    // Sinh số ngẫu nhiên dựa trên trạng thái đèn
+    if (isLightOn) {
+        // Nếu đèn bật, sinh từ 50 đến 100
+        return Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+    } else {
+        // Nếu đèn tắt, sinh từ 0 đến 49
+        return Math.floor(Math.random() * 50);
+    }
+}
+
+// Thêm hàm để bật/tắt đèn khi nhấn nút
+function toggleLight() {
+    isLightOn = !isLightOn; // Đảo ngược trạng thái đèn
+    var bulbImage = document.getElementById('myImage');
+    bulbImage.src = isLightOn ? 'https://www.w3schools.com/js/pic_bulbon.gif' : 'https://www.w3schools.com/js/pic_bulboff.gif';
+}
 
 // khai báo mảng
 var nhiet_do = [0,0,0,0,0,0,0,0,0,0,0,0];
