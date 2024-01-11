@@ -10,39 +10,7 @@
     document.getElementById('anhsangValue').innerHTML = number2 + "lux"
 
 
-    function ChangeColor(){
-        if(number< 20){
-            document.getElementById(`col1`).style.background = '#FFF9B0'
-        }else if (number >= 20 && number<50){
-            document.getElementById(`col1`).style.background = '#CCFF66'
-        }else{
-            document.getElementById(`col1`).style.background = '#FF884B'
-            
-        }
-    }
-    function ChangeColor1(){
-    if(number1< 33){
-        document.getElementById(`col2`).style.background = '#72FFFF'
-    }else if (number1 >= 33 && number1<66){
-        document.getElementById(`col2`).style.background = '#00CC99'
-    }else{
-        document.getElementById(`col2`).style.background = '#0096FF'
-        
-    }
-    }
-    function ChangeColor2(){
-        if(number2< 33){
-            document.getElementById(`col3`).style.background = '#FEF9A7'
-        }else if (number2 >= 33 && number2<66){
-            document.getElementById(`col3`).style.background = '#FAC213'
-        }else{
-            document.getElementById(`col3`).style.background = '#F77E21'
-        }
-    }
-
-
-
-
+    
     ChangeColor(number)
     ChangeColor1(number1)
     ChangeColor2(number2)
@@ -77,7 +45,7 @@ var xValues = [100,200,300,400,500,600,700,800,900,1000];
             labels: xValues,
             datasets: [
                 
-                { 
+            { 
             data: nhiet_do ,
             borderColor: "red",
             fill: false
@@ -100,3 +68,35 @@ var xValues = [100,200,300,400,500,600,700,800,900,1000];
             legend: {display: false}
         }
     });
+    function ChangeColor(value) {
+        var element = document.getElementById('col1');
+        if (value < 20) {
+            element.style.background = '#FFF9B0';
+        } else if (value >= 20 && value < 50) {
+            element.style.background = '#CCFF66';
+        } else {
+            element.style.background = '#FF884B';
+        }
+    }
+    
+    function ChangeColor1(value) {
+        var element = document.getElementById('col2');
+        if (value < 33) {
+            element.style.background = '#72FFFF';
+        } else if (value >= 33 && value < 66) {
+            element.style.background = '#00CC99';
+        } else {
+            element.style.background = '#0096FF';
+        }
+    }
+    
+    function ChangeColor2(value) {
+        var element = document.getElementById('col3');
+        if (value < 33) {
+            element.style.background = '#FEF9A7';
+        } else if (value >= 33 && value < 66) {
+            element.style.background = '#FAC213';
+        } else {
+            element.style.background = '#F77E21';
+        }
+    }
