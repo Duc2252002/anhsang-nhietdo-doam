@@ -42,13 +42,23 @@ function generateRandomNumber() {
     }
 }
 let lightStatus = false; // false là đèn tắt, true là đèn bật
-
+let clickCount = 0;
 // Thêm hàm để bật/tắt đèn khi nhấn nút
 function toggleLight() {
-    lightStatus = !lightStatus; // Đảo ngược trạng thái đèn
+    clickCount++; // Tăng số lần nhấn
+
+    if (clickCount % 2 === 1) {
+        // Nếu số lần nhấn lẻ, bật đèn
+        lightStatus = true;
+    } else {
+        // Nếu số lần nhấn chẵn, tắt đèn
+        lightStatus = false;
+    }
+
     const imageSrc = lightStatus ? 'https://www.w3schools.com/js/pic_bulbon.gif' : 'https://www.w3schools.com/js/pic_bulboff.gif';
     document.getElementById('myImage').src = imageSrc;
 }
+
 
 
 // khai báo mảng
