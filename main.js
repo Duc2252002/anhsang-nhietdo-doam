@@ -41,13 +41,15 @@ function generateRandomNumber() {
         return Math.floor(Math.random() * 50);
     }
 }
+let lightStatus = false; // false là đèn tắt, true là đèn bật
 
 // Thêm hàm để bật/tắt đèn khi nhấn nút
 function toggleLight() {
-    isLightOn = !isLightOn; // Đảo ngược trạng thái đèn
-    var bulbImage = document.getElementById('myImage');
-    bulbImage.src = isLightOn ? 'https://www.w3schools.com/js/pic_bulbon.gif' : 'https://www.w3schools.com/js/pic_bulboff.gif';
+    lightStatus = !lightStatus; // Đảo ngược trạng thái đèn
+    const imageSrc = lightStatus ? 'https://www.w3schools.com/js/pic_bulbon.gif' : 'https://www.w3schools.com/js/pic_bulboff.gif';
+    document.getElementById('myImage').src = imageSrc;
 }
+
 
 // khai báo mảng
 var nhiet_do = [0,0,0,0,0,0,0,0,0,0,0,0];
